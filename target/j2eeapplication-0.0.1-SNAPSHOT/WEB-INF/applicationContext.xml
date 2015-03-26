@@ -4,6 +4,15 @@
         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
         
         <import resource="datasource-config.xml" />
-        <import resource="webflow-config.xml" />        
+        <import resource="webflow-config.xml" />       
         
+        <!--  DAO declarations -->
+        <bean id="UserDao" class="com.example.j2eeapp.dao.UserJpaDao" />
+        
+        <!--  Services declarations -->
+        <!--  the property tag encloses spring injection -->
+        <bean id="UserService" class="com.example.j2eeapp.services.impl.UserServiceImpl">
+        	<property name="userDao" ref="UserDao" />
+        	</bean>
+        	
 </beans>

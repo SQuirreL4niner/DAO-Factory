@@ -4,13 +4,7 @@
            xmlns:tx="http://www.springframework.org/schema/tx"
            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd         
                         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-                        
-        <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
-                <property name="connectionCachingEnabled" value="true" />
-                <property name="URL" value="jdbc:oracle:thin:@localhost:1521:XE" />
-                <property name="user" value="j2eedb" />
-                <property name="password" value="pass" />
-        </bean>                 
+            
         
         <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
                 <property name="jpaVendorAdapter">
